@@ -1,58 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Form Data Diri</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Form Input Nama</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <div class="container">
+        <h1 class="judul">Form Input Nama</h1>
 
-    <h1>Form Data Diri</h1>
-
-    <form method="POST">
-
-        <label>Nama:</label>
-        <input type="text" name="nama"
-        placeholder="Masukkan nama" required>
-
-        <label>Umur:</label>
-        <input type="number" name="umur"
-        placeholder="Masukkan umur" required>
-
-        <label>Jenis Kelamin:</label>
-        <select name="gender">
-            <option value="Perempuan">Perempuan</option>
-            <option value="Laki-laki">Laki-laki</option>
-        </select>
-
-        <button type="submit">Kirim</button>
-
-    </form>
-
-    {% if data %}
-    <div class="biodata">
-
-        <h2>Biodata Pengguna</h2>
-
-        <div class="isi">
-            <label>Nama</label>
-            <p>{{ data.nama }}</p>
+        <div class="kartu">
+            <form method="POST" action="/kirim">
+                <label for="nama">Masukkan Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama kamu..." required>
+                <div class="btn-wrapper">
+                    <button type="submit">Kirim</button>
+                </div>
+            </form>
         </div>
 
-        <div class="isi">
-            <label>Umur</label>
-            <p>{{ data.umur }} tahun</p>
+        {% if nama %}
+        <div class="kartu hasil">
+            <h2>Data Berhasil Dikirim!</h2>
+            <p class="sapaan">Halo, {{ nama }}!</p>
+            <p class="sub-teks">Selamat datang di aplikasi Flask.</p>
         </div>
-
-        <div class="isi">
-            <label>Jenis Kelamin</label>
-            <p>{{ data.gender }}</p>
-        </div>
-
-        <h3>Data Berhasil Dikirim!</h3>
-
+        {% endif %}
     </div>
-    {% endif %}
-
 </body>
 </html>

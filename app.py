@@ -2,16 +2,16 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+# Route 1: Menampilkan halaman form awal
+@app.route('/')
 def index():
-    data = {}
+    return render_template('index.html', nama=None)
 
-    if request.method == 'POST':
-        data['nama']=request.form['nama']
-        data['umur']=request.form['umur']
-        data['gender']=request.form['gender']
-
-    return render_template('index.html', data=data)
+# Route 2: Khusus menerima data POST (tanpa GET)
+@app.route('/kirim', methods=['POST'])
+def kirim():
+    nama = request.form['nama']
+    return render_template('index.html', nama=nama)
 
 if __name__ == '__main__':
     app.run(debug=True)
