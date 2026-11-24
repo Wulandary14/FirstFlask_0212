@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data Diri</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>Form Data Diri</h1>
+
+    <form method="POST">
+
+        <label>Nama:</label>
+        <input type="text" name="nama"
+        placeholder="Masukkan nama" required>
+
+        <label>Umur:</label>
+        <input type="number" name="umur"
+        placeholder="Masukkan umur" required>
+
+        <label>Jenis Kelamin:</label>
+        <select name="gender">
+            <option value="Perempuan">Perempuan</option>
+            <option value="Laki-laki">Laki-laki</option>
+        </select>
+
+        <button type="submit">Kirim</button>
+
+    </form>
+
+    {% if data %}
+    <div class="biodata">
+
+        <h2>Biodata Pengguna</h2>
+
+        <div class="isi">
+            <label>Nama</label>
+            <p>{{ data.nama }}</p>
+        </div>
+
+        <div class="isi">
+            <label>Umur</label>
+            <p>{{ data.umur }} tahun</p>
+        </div>
+
+        <div class="isi">
+            <label>Jenis Kelamin</label>
+            <p>{{ data.gender }}</p>
+        </div>
+
+        <h3>Data Berhasil Dikirim!</h3>
+
+    </div>
+    {% endif %}
+
+</body>
+</html>

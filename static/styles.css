@@ -1,0 +1,84 @@
+body {
+    font-family: Arial;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #F8C8D8,
+        #dfecd9,
+        #A8BFA3
+    );
+
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+form {
+    width: 300px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: pink;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.biodata {
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.biodata h2 {
+    text-align: center;
+    color: #d16b91;
+}
+
+.isi {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff0f5;
+    border-radius: 8px;
+}
+
+.isi label {
+    font-weight: bold;
+    color: #d16b91;
+    margin-top: 0;
+}
+
+.isi p {
+    margin-bottom: 0;
+}
+
+.biodata h3 {
+    text-align: center;
+    color: green;
+    font-size: 14px;
+}
